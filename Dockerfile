@@ -16,7 +16,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
 
 RUN apt-get update && \
     apt-get install -y erlang && \
-    apt-get install -y elixir && \
+    apt-get install -y elixir=1.7\* && \
     apt-get install -y nodejs && \
     apt-get clean -y && \
     rm -rf /var/cache/apt/*
@@ -25,4 +25,3 @@ ENV LANG=en_US.UTF-8
 
 RUN mix local.hex --force && \
     mix local.rebar --force
-
